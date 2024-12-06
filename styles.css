@@ -7,11 +7,11 @@ body {
     font-family: Verdana;
 }
 
-table {
+.middle table {
     /* border-collapse: collapse; ใช้สำหรับการรวมขอบของเซลล์ในตารางให้เป็นขอบเดียวกัน ซึ่งทำให้ดูเรียบร้อยและประหยัดพื้นที่ */
     border-collapse: collapse; 
     /* border: 2px solid rgb(140 140 140); คือการกำหนดขอบขององค์ประกอบให้มีความหนา 2px, เป็นเส้นทึบ, และสีเทาอ่อน (RGB: 140, 140, 140). */
-    border: 2px solid rgb(140 140 140);
+    border: 2px solid white;
     /* font-family: Verdana; ใช้สำหรับกำหนดให้ข้อความในองค์ประกอบใช้ฟอนต์ประเภท Verdana, ซึ่งเป็นฟอนต์ที่ไม่มีเส้นขีดปลายตัวอักษร. */
     font-family: Verdana;
     /* font-size: 0.8rem; ใน CSS กำหนดขนาดฟอนต์ให้เป็น 0.8 เท่าของขนาดฟอนต์มาตรฐาน ซึ่งในกรณีของ rem (root em) ขนาดนี้จะคำนวณตามขนาดฟอนต์ขององค์ประกอบ <html> */
@@ -26,42 +26,54 @@ table {
     margin: 0 auto;
 }
 
-
 /* การใช้ background-color: rgb(228 240 245); ใน thead และ tfoot ช่วยทำให้ส่วนหัวและส่วนท้ายของตารางมีพื้นหลังสีฟ้าอ่อน */
-thead,
+.middle thead,
 tfoot {
     background-color: rgb(228 240 245);
 }
 /* ทั้ง <th> และ <td> จะมีขอบสีเทาอ่อน (rgb(160, 160, 160)) หนาขนาด 1px แบบเส้นตรง
 จะมี ระยะห่างภายใน (padding) ที่ 8px ด้านบนและด้านล่าง และ 10px ด้านซ้ายและขวา ซึ่งทำให้ข้อความภายในเซลล์ไม่ชิดขอบ */
-th,
+.middle th,
 td {
     border: 1px solid rgb(160 160 160);
     padding: 8px 10px;
 }
 /* คำสั่งนี้จะทำให้ เซลล์สุดท้าย ของแต่ละแถว (ที่เป็น <td>) ในตารางถูกจัดตำแหน่งข้อความให้ชิดทางซ้าย (left), โดยไม่สนใจว่าเซลล์นั้นจะเป็นข้อมูลอะไร (เช่น ตัวเลข, ข้อความ, หรือรูปภาพ) */
-td:last-of-type {
+.middle td:last-of-type {
     text-align: left;
 }
 /* การใช้คำสั่งนี้จะทำให้แถวที่มีลำดับเป็นเลขคู่ใน <tbody> ของตาราง (เช่น แถวที่ 2, 4, 6 ฯลฯ) มีพื้นหลังสีเทาฟ้าอ่อน (rgb(237, 238, 242)), ซึ่งช่วยให้แยกแถวได้ง่ายขึ้นและทำให้ตารางดูสะอาดและอ่านง่ายขึ้น */
-tbody>tr:nth-of-type(even) {
+.middle tbody>tr:nth-of-type(even) {
     background-color: rgb(237 238 242);
 }
 /* คำสั่ง tfoot th { text-align: right; } ใช้เพื่อจัดข้อความใน <th> ที่อยู่ในส่วน <tfoot> ของตารางให้จัดชิดขวา */
-tfoot th {
+.middle tfoot th {
     text-align: right;
 }
 /* คำสั่งนี้จะทำให้ข้อความใน เซลล์ทั้งหมด (<td>) ที่อยู่ใน <tfoot> ของตารางมีลักษณะตัวอักษร หนา ซึ่งโดยปกติจะใช้สำหรับการแสดงผลรวม สรุป หรือข้อมูลที่สำคัญที่ต้องการให้เด่นขึ้นจากข้อมูลปกติในตาราง */
-tfoot td {
+.middle tfoot td {
     font-weight: bold;
 }
 /* ภาพจะถูกแสดงเป็นวงกลมที่มีขอบสองเส้น (double border) ที่มีสีเทา
 ขนาดของภาพจะถูกปรับเป็น 250px x 250px และจะมีลักษณะกลมด้วยการใช้ border-radius: 50%
 ขอบจะมีลักษณะเป็นเส้นสองเส้นที่มีความหนา 5px และสีเทา */
-img {
+.top img {
     width: 250px;
     height: 250px;
     border: double 5px grey;
     border-radius: 50%;
-
+}
+hr {
+    background-color: #AEBDCA;
+    border: dotted;
+    width: 20%;
+}
+.top table {
+        border: none;
+        border-collapse: collapse; /* ใช้เพื่อให้ไม่มีช่องว่างระหว่างขอบเซลล์ */
+        width: auto;
+        margin: 0 auto;
+}
+.top td, th {
+        border: none; /* ลบขอบของเซลล์ทั้งหมด */
 }
