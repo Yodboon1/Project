@@ -60,7 +60,7 @@ tfoot td {
 ขอบจะมีลักษณะเป็นเส้นสองเส้นที่มีความหนา 5px และสีเทา */
 img {
     width: 250px;
-    height: 350px;
+    height: 250px;
     border: double 5px grey;
     border-radius: 50%;
 
